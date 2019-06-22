@@ -1,28 +1,41 @@
-  <!-- header -->
+<!-- header -->
 
 <?php include  "templates/header.php" ?>
 
-  <!-- navigation bar -->
+<!-- navigation bar -->
 
 <?php include  "templates/navigation.php" ?>
-   <style type="text/css">
-       
-       .reply-form{
-            display: none;
-       }
+<style type="text/css">
+    /* .row {
+        margin-top: 30px;
+    } */
 
-       h2.place-title {
-    /* padding-top: 23px; */
-    margin: 0px;
-    padding: 0px;
-    padding-top: 2px;
-}
-   </style>
+    .reply-form {
+        display: none;
+    }
 
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">                
-                    <?php 
+    h2.place-title {
+        /* padding-top: 23px; */
+        margin: 0px;
+        padding: 0px;
+        padding-top: 2px;
+        margin-top: 30px;
+        margin-bottom:5px;
+        box-sizing: border-box;
+    }
+
+    .place-photo {
+        margin: 0px; 
+        max-height: 500px;
+    }
+
+    
+</style>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <?php 
 
                     if (isset($_GET['place_id'])) {
 
@@ -38,31 +51,34 @@
                     {
                     $the_place_id =$row['place_id']; 
                     $place_title = $row['place_title'];
+                    $place_address = $row['place_address'];
                     $added_date = $row['added_date'];
                     $place_image = $row['place_image'];
                     $place_description = $row['place_description'];
                     $place_location = $row['place_location'];
 
                     ?>
-        
-        <!--show all places by their uniqe place_id--> 
-                <div class="col-md-offset-1 col-md-10">
-                     <h2 class="place-title">
-                        <?php  echo $place_title ?>
-                    </h2>
-                    
 
-                 <img style="width: 100%" class="place_photo img-responsive pull-right img-thumbnail" src="images/<?php echo $place_image ?>" alt="image">
-                   
-                    <h4 class="" class="page-header" >
-                        
-                    </h4>
-                    <hr>
-             </div>
+        <!--show all places by their uniqe place_id-->
+        <div class="col-md-offset-1 col-md-10">
+            <h2 class="place-title">
+                <?php  echo $place_title ?>
+            </h2>
+            <p id="place-address"><i class="fa fa-map-marker"> <?php  echo $place_address ?></i></p>
 
 
-              <div class="col-md-offset-1 col-md-10">
-                <div class="galleryImage">
+            <img style="width: 100%" class="place-photo img-responsive pull-right img-thumbnail"
+                src="images/<?php echo $place_image ?>" alt="image">
+
+            <h4 class="" class="page-header">
+
+            </h4>
+            <hr>
+        </div>
+
+
+        <div class="col-md-offset-1 col-md-10">
+            <div class="galleryImage">
                 <blockquote>
                     <p>Description : </p>
 
@@ -71,40 +87,41 @@
                 </blockquote>
 
 
-                                
+
 
                 <blockquote>
                     <p>Location-Map : </p>
-                
-                                
-                         <?php echo $place_location; ?>
-                       </blockquote>
-                                
-                                
 
-                                
-                                <hr>
+
+                    <?php echo $place_location; ?>
+                </blockquote>
+
+
+
+
+                <hr>
 
 
 
                 <!-- Comments Form -->
 
-            <div class="">
-                <h4>Leave a Comment:</h4>
-                <form action="" method="post"> 
-                    <div class="form-group">
-                        <textarea  name="comment_content" class="form-control" rows="7" placeholder="Enter your comments....." ></textarea>
-                    </div>
-                    <button type="submit"  class="btn btn-primary" name="create_comment">submit</button>
-                </form>
-            </div>
+                <div class="">
+                    <h4>Leave a Comment:</h4>
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <textarea name="comment_content" class="form-control" rows="7"
+                                placeholder="Enter your comments....."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="create_comment">submit</button>
+                    </form>
+                </div>
 
 
 
-                            <!--query for sending comments in database-->
+                <!--query for sending comments in database-->
 
 
-                              <?php
+                <?php
 
 
                             if (isset($_POST['create_comment'])) {
@@ -156,8 +173,8 @@
 
 
 
-                                <!--query for getting comments in web page-->
-                            <?php 
+                <!--query for getting comments in web page-->
+                <?php 
 
                             $place_id =  $_GET['place_id'];
 
@@ -167,7 +184,7 @@
                             $select_all_comments = mysqli_query($connection,$query);
 
                             ?>
-                            <?php 
+                <?php 
 
                             $count = mysqli_num_rows($select_all_comments);
 
@@ -175,10 +192,10 @@
                             ?>
 
 
-                            <span class="badge"><?php echo $count; ?></span> Comments :
+                <span class="badge"><?php echo $count; ?></span> Comments :
 
-                            <hr>
-                            <?php 
+                <hr>
+                <?php 
 
                             if ($count == true) {
                                
@@ -194,15 +211,15 @@
 
                             ?>
 
-                            <!--show comments in web page-->
+                <!--show comments in web page-->
 
-                            <div class=""><strong>Commented by</strong>
+                <div class=""><strong>Commented by</strong>
 
-                            <p>
-                                <big><span class="glyphicon glyphicon-user">
-                                    
+                    <p>
+                        <big><span class="glyphicon glyphicon-user">
 
-                            <?php 
+
+                                <?php 
 
 
 
@@ -221,43 +238,43 @@
 
                             ?>
 
-                     </span> <?php echo $commented_user_name ; ?></big> 
-                    <small class="float_times">
-                       at <span class="glyphicon glyphicon-time"> </span><?php echo $comment_date ; ?>
-                    </small>
-            <p>
+                            </span> <?php echo $commented_user_name ; ?></big>
+                        <small class="float_times">
+                            at <span class="glyphicon glyphicon-time"> </span><?php echo $comment_date ; ?>
+                        </small>
+                        <p>
 
-                <?php echo $comment_content ; ?>
-
-
-            </p>
-
-            </p>
-            <div class="form-group">
-                <textarea class="reply-form" rows="6" placeholder="reply here..."></textarea>
-            </div>
-<button class="reply-btn">reply</button>
+                            <?php echo $comment_content ; ?>
 
 
+                        </p>
 
-            </div>
+                    </p>
+                    <div class="form-group">
+                        <textarea class="reply-form" rows="6" placeholder="reply here..."></textarea>
+                    </div>
+                    <button class="reply-btn">reply</button>
 
 
- 
 
-<!-- closed for second loop -->
-    <?php } } ?>
-<!--closed for first loop -->
-     <?php  } ?>   
+                </div>
+
+
+
+
+                <!-- closed for second loop -->
+                <?php } } ?>
+                <!--closed for first loop -->
+                <?php  } ?>
 
             </div>
         </div>
-</div>
+    </div>
 
-</div>     
+</div>
 <!--  footer  -->
-       
-       
+
+
 <?php include "templates/footer.php" ?>
 
 <!--  /.footer  -->

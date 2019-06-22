@@ -231,9 +231,9 @@ h1,h2,h3,h4,h5,h6{
     width: 1170px;
     margin: auto;
 }
-.places_img{
-    margin-bottom: 50px;
-}
+/* .places_img{
+    margin-bottom: 0px;
+} */
 .searchInput {
     width: 50%;
     margin: auto;
@@ -241,10 +241,10 @@ h1,h2,h3,h4,h5,h6{
 .galleryImage blockquote {
     text-align: justify;
 }
-.place_photo{
-    margin: 50px 0;
+/* .place_photo{
+    margin: 0px ;
     max-height: 500px;
-}
+} */
 footer {
   background-color: #333;
 }

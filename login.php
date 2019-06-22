@@ -130,30 +130,89 @@ echo "<h1>Username or password is Worng!!!!</h1>";
                          <div class="">
                                <div class="form-group">
                                     <label for="user_name">User Name</label><small style="color: red">* requires</small>
-                                    <input type="text" class="form-control" name="username" placeholder="Enter your user name..." >
+                                    <input type="text" class="form-control" id="login-user-name" name="username" placeholder="Enter your user name..." >
+                                    <p id="username-error-msg" style="color:red"></p>
                                </div>
                         </div>
                         
                         <div class="">
                                <div class="form-group">
                                     <label for="password">Password</label><small style="color: red">* requires</small>
-                                    <input type="password" class="form-control" name="user_password" placeholder="Enter your password..." >
-                               </div>
+                                    <input type="password" class="form-control" id="login-user-password" name="user_password" placeholder="Enter your password..." >
+                                    <p id="userpassword-error-msg" style="color:red"></p>
+                                  
+                                </div>
                         </div>
                        
-                    <button type="submit" class="btn btn-primary" name="login_account">Login</button>
+                    <button type="submit" class="btn btn-primary" id="login-button" name="login_account">Login</button>
                     </form>
 
             </div><!---/.sign_up_form -->
 
             <div>
-              don't have an account?<small><a href="sign_up.php">create an account</a></small>
+              don't have an account?<small><a href="sign_up.php">Create an account</a></small>
             </div>
         </div><!---/.col-md-offset-3 col-md-6 col-md-offset-3-->     
         </div><!---/.row-->
 
 
 </div><!---/.container-->
+
+<script>
+
+// var loginUserName = document.getElementById("login-user-name").value;
+// var loginUserPassword = document.getElementById("login-user-password").value;
+// var loginButton = document.getElementById("login-button");
+
+// loginButton.addEventListener('click',userLogin);
+
+// if(loginUserName == "" || loginUserName == empty || loginUserPassword == "" || loginUserPassword == empty){
+//   if(loginUserName == "" || loginUserName == empty){
+//     document.getElementById("username-error-msg").innerHTML = "Username is worong!!";
+//   }
+//   else{
+//     document.getElementById("username-error-msg").innerHTML = "";
+
+//   }
+//   if(loginUserPassword == "" || loginUserPassword == empty){
+//     document.getElementById("userpassword-error-msg").innerHTML = "Password is worong!!";
+//   }
+//   else{
+//     document.getElementById("userpassword-error-msg").innerHTML = "";
+//   }
+
+// }
+// else{
+//   function userLogin(){
+// 
+
+// $query = "SELECT * FROM  users WHERE username = loginUserName ";
+// $login_verify_query = mysqli_query($connection,$query);
+// while ($row = mysqli_fetch_array($login_verify_query)) {
+//   $db_user_id = $row['user_id'];
+//   $db_user_name = $row['username'];
+//   $db_user_password = $row['user_password'];
+
+//   if (loginUserName == $db_user_name && $password == $db_user_password) {
+
+// 
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 
 
