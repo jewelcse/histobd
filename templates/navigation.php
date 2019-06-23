@@ -1,4 +1,8 @@
-<?php include "db.php" ; ?>
+<?php 
+include "db.php";
+include "header.php" ?>
+
+
 
 
 
@@ -7,6 +11,12 @@
     padding-top: 0px;
   }
 </style>
+
+
+
+   
+ 
+
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -30,7 +40,7 @@
       <ul class="nav navbar-nav">
 
         <?php 
-
+              
               $query = "SELECT * FROM categories limit 5";
 
               $select_all_categories = mysqli_query($connection,$query);
@@ -50,18 +60,18 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="searchInput">
+        <!-- <li class="searchInput">
           <form action="search.php" method="post">
             <div class="input-group">
               <input name="search" type="text" class="form-control" placeholder="search places...">
               <span class="input-group-btn">
-                <button name="submit" class="btn btn-default" type="submit">
+                <button id="submit" name="submit" class="btn btn-default" type="submit">
                   <span class="glyphicon glyphicon-search"></span>
                 </button>
               </span>
             </div>
           </form>
-        </li>
+        </li> -->
         <?php if(isset($_SESSION['username'])){ ?>
         <li id="logOutButton">
           <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
@@ -123,3 +133,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
 </nav>
+
+
+
+
+

@@ -113,22 +113,22 @@
               <form action="" method="post">
                 <div class="form-group">
                   <div class="user-firstname"><label for="user_firstname">Firstname :</label>
-                      <input type="text" class="form-control" name="user_firstname" value="<?php echo $user_firstname ; ?>"><button name="update-user-firstname" class="update-btn btn btn-default">Update</button>
+                      <input type="text" class="form-control" name="user_firstname" id="user_firstname" value="<?php echo $user_firstname ; ?>"><button id="update-user-firstname" class="update-btn btn btn-default">Update</button>
                     </div>
                   </div>
                     <div class="form-group">
                       <div class="user-lastname"><label for="user_lastname">Lastname :</label>
-                          <input type="text" class="form-control" name="user_lastname" value="<?php echo $user_lastname ; ?>"><button name="update-user-lastname" class="update-btn btn btn-default">Update</button>
+                          <input type="text" class="form-control" name="user_lastname" id="user_lastname"  value="<?php echo $user_lastname ; ?>"><button id="update-user-lastname" class="update-btn btn btn-default">Update</button>
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="user-name"><label for="user_name">Username :</label>
-                      <input type="text" class="form-control" name="username" value="<?php echo $user_name ; ?>"><button name="update-user-name" class="update-btn btn btn-default">Update</button>
+                      <input type="text" class="form-control" name="username" id="username"  value="<?php echo $user_name ; ?>"><button id="update-user-name" class="update-btn btn btn-default">Update</button>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="user-email"><label for="user_email">Email :</label>
-                      <input type="text" class="form-control" name="user_email" value="<?php echo $user_email ; ?>"><button name="update-user-email" class="update-btn btn btn-default">Update</button>
+                      <input type="text" class="form-control" name="user_email" id="user_email"  value="<?php echo $user_email ; ?>"><button id="update-user-email" class="update-btn btn btn-default">Update</button>
                     </div>
                   </div>
 
@@ -193,6 +193,24 @@ if (isset($_POST['update-user-email'])) {
 
 
 ?>
+<!-- 
+<script>
+$(document).ready(function(){
+ 
+  var user_id;
+ 
+  $(document).on('click', '#update-user-firstname', function(){
+  	var id = user_id;
+  	var name = $('#user_firstname').val();
+  	$.ajax({
+      url: 'users.php',
+      type: 'POST',
+      data: $('form').serialize()
+  	});		
+  });
+});
+
+</script> -->
 
 
          

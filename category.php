@@ -46,8 +46,9 @@
 
                 ?>
                                     <small><?php echo $number_of_items." "."places here";  ?></small>
+                                   
                                 </h1>  <!-- /.page-header -->
-                            </div>  <!-- /.col-md-12 -->
+                        </div>  <!-- /.col-md-12 -->
 
 
                 <?php 
