@@ -23,12 +23,12 @@
     <!-- Jquery Core CSS -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- Jquery Core CSS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
 
     <!-- Custom CSS -->
     <link href="css/home.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.scss" rel="stylesheet">
 
 </head>
 

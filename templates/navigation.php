@@ -1,20 +1,13 @@
-<?php 
-include "db.php";
-include "header.php" ?>
-
-
-
-
-
+<?php include "db.php"; ?>
 <style type="text/css" media="screen">
   .dropdown {
     padding-top: 0px;
   }
 </style>
-
-
-
-   
+<!-- Jquery Core CSS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+ 
  
 
 

@@ -246,3 +246,24 @@ ALTER TABLE `users`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+<div class="row mt-3">
+                    <div class="col-sm-2">
+                        <div class="thumbnail">
+                            <img class="img-responsive user-photo"
+                                src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                        </div><!-- /thumbnail -->
+                    </div><!-- /col-sm-1 -->
+
+                    <div class="col-sm-10">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+                            </div>
+                            <div class="panel-body" id="commentData">
+
+                            </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                    </div><!-- /col-sm-5 -->
+                </div>

@@ -6,7 +6,12 @@
 <?php include  "templates/navigation.php" ?>
 
 <!-- Page Content -->
+<style>
+body{
+    box-sizing: border-box;
+}
 
+</style>
 
 <div id="home-carousel" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for slides -->
@@ -91,14 +96,19 @@
 
 <div class="second-container">
     <div class="container">
-        <div class="row" style="margin-bottom: 30px; box-sizing: border-box;margin-right: 15px;">
+        <div class="row" style="margin-bottom: 30px;">
             
-           <div class="quick-search" style="float: right;width:100%" >
+           <div class="quick-search" style="float:left;background-color: aquamarine" >
                 <form action="" >
                         <input type="text" id="quick-search" class="form-control" placeholder="Quick Search..">
+                        
                 </form>
-                <p id="result" cl></p>
+                
            </div>
+           <!-- <ul>
+               <li id="result"></li>
+           </ul> -->
+            <h4 id="result" class="float:right"></h4>
         </div>
     
     
