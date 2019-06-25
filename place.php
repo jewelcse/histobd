@@ -121,8 +121,9 @@
                         </div>
                         <input type="button" class="btn btn-primary" id="submit" value="submit">
                     </form>
-                    <p id="posted" class="bg-success"></p>
-                    <p id="posted_fail" class="bg-danger"></p>
+                    <p id="posted" class="bg-success p-2"></p>
+                    <p id="posted_fail" class="bg-danger p-2"></p>
+                    <p id="empty_post" class="bg-danger p-2"></p>
                 </div>
 
 
@@ -184,7 +185,11 @@
                     });
                 }
                 else {
-                    alert("plz comments somethings!!!!")
+                    $('#empty_post').html('Plz comment something !!!');
+                    $('#empty_post').fadeIn('slow',function(){
+                        $('#empty_post').delay(1500).fadeOut();
+                    });
+                    return false;
                 }
             }
 
