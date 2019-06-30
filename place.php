@@ -39,11 +39,11 @@
 
                     if (isset($_GET['place_id'])) {
 
-                    $place_id =  $_GET['place_id'];
+                    $place_title_url =  $_GET['place_id'];
 
 
-                    }
-                    $query = "SELECT * FROM places WHERE place_id = '{$place_id}' ";
+                    
+                    $query = "SELECT * FROM places WHERE place_id= '{$place_title_url}' ";
 
                     $select_all_places = mysqli_query($connection,$query);
 
@@ -94,7 +94,7 @@
                     <p>Location-Map : </p>
 
 
-                    <?php echo $place_location;  } ?>
+                    <?php echo $place_location;  } } ?>
                 </blockquote>
 
 

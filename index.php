@@ -117,6 +117,11 @@ body{
 
             <!--  query for getting(showing) all places from db to web page  -->
             <?php 
+            
+// function title_slug($string){
+//     $slug = preg_replace('/[^a-z0-9-]+/','-',strtolower($string));
+//     return $slug;
+// }
 
             $query = "SELECT * FROM places";
 
@@ -127,6 +132,7 @@ body{
 
             $the_place_id = $row['place_id'];
             $place_title = $row['place_title'];
+            $place_title_url =$row['place_title_url'];
             $added_date = $row['added_date'];
             $place_image = $row['place_image'];
             //$place_description = substr($row['place_description'],0,30);

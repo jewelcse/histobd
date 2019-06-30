@@ -1,5 +1,10 @@
 <?php 
 
+function title_slug($string){
+    $slug = preg_replace('/[^a-z0-9-]+/','-',strtolower($string));
+    return $slug;
+}
+
 if (isset($_POST['add_place'])) {
 
 	$title = $_POST['place_title'];
@@ -24,15 +29,17 @@ if (isset($_POST['add_place'])) {
 	$description = mysqli_real_escape_string($connection,$description);
 	$place_location = mysqli_real_escape_string($connection,$place_location);
 
+	$title_url = title_slug($title);
+
 
 	move_uploaded_file($image_temp, "../images/$image");
 
 
 
 
-	$query = "INSERT INTO places(place_id,place_cat_id,place_title,added_date,place_image,place_description,place_location,place_tags) ";
+	$query = "INSERT INTO places(place_id,place_cat_id,place_title,place_title_url,added_date,place_image,place_description,place_location,place_tags) ";
 
-	$query .= "VALUES('','$category','$title',now(),'$image','$description','{$place_location}','$tags') ";
+	$query .= "VALUES('','$category','$title','$title_url',now(),'$image','$description','{$place_location}','$tags') ";
 
 
 
@@ -116,29 +123,5 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </form>

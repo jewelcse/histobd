@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^place/([a-zA-Z0-9-/]+)$ place.php?place_title_url=$1
+RewriteRule ^place/([a-zA-Z0-9-/]+)/ place.php?place_title_url=$1
