@@ -268,4 +268,41 @@ ALTER TABLE `users`
                     </div><!-- /col-sm-5 -->
                 </div>
 
-               
+            
+<?php
+
+// if (isset($_POST['update-user-firstname'])) {
+
+//   $first_name = $_POST['user_firstname'];
+//   $query  = "UPDATE users SET user_firstname = '$first_name' WHERE user_id  = $user_id " ;
+//   mysqli_query($connection,$query);
+
+//   //header("Location:users.php?user_id=$user_id");
+
+// }
+
+// if (isset($_POST['update-user-lastname'])) {
+//   $last_name = $_POST['user_lastname'];
+//   $query  = "UPDATE users SET user_lastname = '$last_name' WHERE user_id  = $user_id " ;
+//   mysqli_query($connection,$query);
+ 
+// }
+
+// if (isset($_POST['update-user-name'])) {
+//   $user_name = $_POST['username'];
+//   $query  = "UPDATE users SET username = '$user_name' WHERE user_id  = $user_id " ;
+//   mysqli_query($connection,$query);
+ 
+// }
+
+// if (isset($_POST['update-user-email'])) {
+  
+//   $user_email = $_POST['user_email'];
+//   $query  = "UPDATE users SET user_email = '$user_email' WHERE user_id  = $user_id " ;
+//   mysqli_query($connection,$query);
+
+
+// }
+
+
+?>   
