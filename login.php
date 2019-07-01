@@ -55,7 +55,9 @@
 
       </div>
       <!---/.sign_up_form -->
-
+<div class="fpass">
+<h5><a href="fpass.php">Forgot Password ? </a></h5>
+</div>
       <div>
         don't have an account?<small><a href="sign_up.php">Create an account</a></small>
       </div>

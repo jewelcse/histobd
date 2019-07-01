@@ -65,7 +65,7 @@
             </div>
           </form>
         </li> -->
-        <?php if(isset($_SESSION['username'])){ ?>
+        <?php if(isset($_SESSION['user_id'])){ ?>
         <li id="logOutButton">
           <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
         </li>
@@ -73,7 +73,7 @@
         <?php  } 
        else{ ?>
         <li id="loginButton">
-          <a href="login.php"><i class="fa fa-sign-in-alt"></i>Login</a>
+          <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"> Login</i></a>
         </li>
         <?php   } ?>
 
@@ -86,17 +86,23 @@
 
 
 
-              if (isset($_SESSION['username'])) {
+              if (isset($_SESSION['user_id'])) {
 
-
-               echo $_SESSION['username'];
-               //echo $_SESSION['user_id'];
+                  $current_user_id  = $_SESSION['user_id'];
+                  $sql = "SELECT * FROM users WHERE user_id = '{$current_user_id}' ";
+                  $result = mysqli_query($connection,$sql);
+                  if(mysqli_num_rows($result) > 0){
+                    $row = mysqli_fetch_assoc($result);
+                   echo $current_user_name = $row['username'];
+                  }
+               
+               //echo $current_user_name;
                
 
               }
               else{
                 
-                $_SESSION['user_id'] = '';
+                // $_SESSION['user_id'] = '';
                 echo "GustUser";
               }
 

@@ -28,7 +28,7 @@ if($row_count == 1){
   $db_user_name = $row['username'];
   session_start();
   $_SESSION['user_id'] = $db_user_id ;  
-  $_SESSION['username'] = $db_user_name ; 
+  //$_SESSION['username'] = $db_user_name ; 
 //   header("Location:index.php");
   echo "success";
   
