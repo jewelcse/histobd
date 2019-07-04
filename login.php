@@ -48,9 +48,10 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary" id="login-button">Login</button>
+          <input type="button" class="btn btn-primary" id="login-button" value="Login">
           <p id="login_msg"></p>
-          <p id="login_msg_txt"></p>
+          <p id="login_error_msg" style="color:red"></p>
+          <p id="success_msg"></p>
         </form>
 
       </div>
@@ -69,6 +70,8 @@
 
 </div>
 <!---/.container-->
+
+<script src="js/jquery.js"></script>
 <script>
 
 
@@ -80,32 +83,33 @@
       $('#login-button').hide();
       $('#login_msg').html("<img src='images/loder.gif'>");
 
-      if (userName.length == 0 || userPass.length == 0) {
-        $('#login_msg_txt').text("Please fill out the username and passsword !!!");
+      if (userName == '' || userPass == '') {
+        $('#login_error_msg').text("Please Enter your Username and Password");
         $('#login-button').show();
         $('#login_msg').hide();
-        //location.href = "login.php"
-        return false;
-
+        // location.href = "login.php";
       }
       else {
         $.post("loginAction.php", { userName: userName, userPass: userPass }, function (data) {
-          
+
+          $('#success_msg').html(data);
+
           location.href = "index.php";
-          //  if(data == "success"){
-          //   location.href = "index.php";
-          //   return false;
-          //  }
-          //  else{
-          //   $('#login-button').show();
-          //   $('#login_msg_txt').text("Invalid username and passsword !!!");
-          //   return false;
-          //  }
-           //return false;
+         
         });
-        return false;
+
+        // $.ajax({
+        //   url:'loginAction.php',
+        //   type:'post',
+        //   data:{
+        //     userName: userName, 
+        //     userPass: userPass
+        //   }
+        //   success:function(data){
+        //     console.log(data);
+        //   }
+        // });
       }
-      return false;
     });
   });
 

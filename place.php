@@ -153,7 +153,7 @@
             console.log(comment_content);
             console.log(comment_place_id);
 
-            if (commented_user_id.length === 0) {
+            if (commented_user_id.length == 0 ) {
                 // alert("plz login to comment!!");
                 $('textarea#comment_content').val(" ");
                 $('#posted_fail').html('plz login to comment!!');
@@ -162,7 +162,7 @@
                 });
             }
             else {
-                if (!(comment_content.length === 0)) {
+                if (!(comment_content.length == 0)) {
                     $.ajax({
                         url: "insertComment.php",
                         type: "POST",
@@ -179,26 +179,23 @@
                                 $('#posted').delay(1500).fadeOut();
                             });
                             $('textarea#comment_content').val(" ");
-
-                        }
-
+                            
+                        } 
                     });
+                   
                 }
                 else {
                     $('#empty_post').html('Plz comment something !!!');
                     $('#empty_post').fadeIn('slow',function(){
                         $('#empty_post').delay(1500).fadeOut();
                     });
-                    return false;
                 }
             }
-
-
-
-
         });
 
-        function dispalyComment() {
+    });
+
+    function dispalyComment() {
             var comment_place_id = $('#comment_place_id').val();
             $.ajax({
                 url: "viewComment.php",
@@ -216,26 +213,8 @@
         }
 
 
-    });
 
-
-
-    // function dispalyCommentedUserName() {
-    //     var commented_user_id = $('#commented_user_id').val();
-    //     $.ajax({
-    //         url: "viewComment.php",
-    //         type: "POST",
-    //         cache: false,
-    //         data: {
-    //             // dispalyComment:1,
-    //             commented_user_id: commented_user_id
-    //         },
-    //         success: function (data) {
-    //             $('#commentedUserData').html(data);
-    //             //alert(data)
-    //         }
-    //     });
-    // }
+  
 
 
 

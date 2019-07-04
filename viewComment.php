@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php
 
 include "templates/db.php";
@@ -43,22 +45,37 @@ while ($row = mysqli_fetch_assoc($select_all_comments) )
     <div class="col-sm-10">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <strong><?php 
-                if($username == ""){
-                    echo "Guest User";
-                }
-                else{
-                    echo $username ;
-                }
-                
-                
-                ?></strong> <span class="text-muted">commented in <i class="far fa-clock"></i> <?php echo $comment_date ; ?></span>
+                <strong><?php  echo $username ; ?></strong>
+                <span class="text-muted"> commented in <i class="far fa-clock"></i> <?php echo $comment_date ; ?></span>
             </div>
-            <div class="panel-body" id="commentData">
-                <?php echo $comment_content ;?> 
+            <div class="panel-body" id="main-content">
+                <?php echo $comment_content ;?>
             </div><!-- /panel-body -->
         </div><!-- /panel panel-default -->
+
+
+        <button type="submit" class="btn btn-primary" id="reply-button">Reply</button>
+
+        <form action="" method="post" id="reply-form">
+            <textarea name="" id="" cols="5" rows="5" class="form-control"></textarea>
+        </form>
+
     </div><!-- /col-sm-5 -->
 </div>
 
+
+
 <?php } ?>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#reply-button").click(function () {
+            $('#reply-form').hide();
+        });
+   
+    }
+
+</script>
