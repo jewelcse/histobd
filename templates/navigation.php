@@ -13,7 +13,7 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
+  <div class="">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -53,10 +53,10 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li class="searchInput">
+        <li class="searchInput">
           <form action="search.php" method="post">
             <div class="input-group">
-              <input name="search" type="text" class="form-control" placeholder="search places...">
+              <input name="search" id="search" type="text" class="form-control" placeholder="search places...">
               <span class="input-group-btn">
                 <button id="submit" name="submit" class="btn btn-default" type="submit">
                   <span class="glyphicon glyphicon-search"></span>
@@ -64,7 +64,10 @@
               </span>
             </div>
           </form>
-        </li> -->
+          <ul>
+            <li id="result" class="list-unstyled"></li>
+          </ul>
+        </li>
         <?php if(isset($_SESSION['user_id'])){ ?>
         <li id="logOutButton">
           <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
@@ -133,6 +136,28 @@
   </div><!-- /.container -->
 </nav>
 
+<script>
+
+    $(document).ready(function(){
+        $("#search").keyup(function(){
+            var quickSearch = $("#search").val();
+            // alert(quickSearch);
+            $.ajax({
+                url:'qSearch.php',
+                data:{place_title:quickSearch},
+                type:'POST',
+                success:function(data){
+                    if (!data.error) {
+                            $('#result').html(data);
+                        }
+                }
+
+            });
+        });
+    });
+
+
+</script>
 
 
 
