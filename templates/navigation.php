@@ -1,8 +1,36 @@
 <?php include "db.php"; ?>
 <style type="text/css" media="screen">
+body{
+  box-sizing: border-box;
+}
   .dropdown {
     padding-top: 0px;
   }
+
+  .search-reasult {
+  background:gray;
+  width:235px;
+  height:auto;
+  margin-top:0px;  
+  position: absolute;
+  box-sizing: border-box;
+  text-align: justify;
+  opacity: .7;
+}
+
+tbody a {
+    padding: 5px;
+    color: white;
+    display:block;
+    
+   
+}
+
+tbody a:hover {
+  color: black;
+  background: #ffffff;
+  text-decoration: none;
+}
 </style>
 <!-- Jquery Core CSS -->
 <script src="js/jquery.js"></script>
@@ -64,9 +92,17 @@
               </span>
             </div>
           </form>
-          <ul>
-            <li id="result" class="list-unstyled"></li>
-          </ul>
+         
+            <div class="row" >
+              <table class="search-reasult ">
+                <tbody class="">
+                  <tr id="result">
+                    <td id="result-data" ></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
         </li>
         <?php if(isset($_SESSION['user_id'])){ ?>
         <li id="logOutButton">

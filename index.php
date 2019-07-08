@@ -7,10 +7,9 @@
 
 <!-- Page Content -->
 <style>
-body{
-    box-sizing: border-box;
-}
-
+    body {
+        box-sizing: border-box;
+    }
 </style>
 
 <div id="home-carousel" class="carousel slide" data-ride="carousel">
@@ -96,22 +95,22 @@ body{
 
 <div class="second-container">
     <div class="container">
-        <div class="row" style="margin-bottom: 30px;">
-            
-           <div class="quick-search" style="float:left;background-color: aquamarine" >
+        <!-- <div class="row" style="margin-bottom: 30px;"> -->
+
+        <!-- <div class="quick-search" style="float:left;background-color: aquamarine" >
                 <form action="" >
                         <input type="text" id="quick-search" class="form-control" placeholder="Quick Search..">
                         
                 </form>
                 
-           </div>
-           <!-- <ul>
+           </div> -->
+        <!-- <ul>
                <li id="result"></li>
            </ul> -->
-            <h4 id="result" class="float:right"></h4>
-        </div>
-    
-    
+        <!-- <h4 id="result" class="float:right"></h4>
+        </div> -->
+
+
         <div class="row">
 
 
@@ -151,16 +150,24 @@ body{
                         <h3><?php echo $place_title ?></h3>
                     </a>
 
-                    <!--  <p>added date <span class="glyphicon glyphicon-time"></span><?php  //echo $added_date ?></p>
-                
-                <p><?php //echo $place_description ?></p>-->
-
                     <a class="btn btn-primary" href="place.php?place_id=<?php  echo $the_place_id ?>">Read More <span
                             class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
             </div>
             <!--  /.col-md-3  -->
+           
+<!-- 
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="images/<?php echo $place_image ?>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="place.php?place_id=<?php  echo $the_place_id ?>"></a></h5>
+                    <a class="btn btn-primary" href="place.php?place_id=<?php  echo $the_place_id ?>">Read More <span
+                        class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                </div>
+            </div> -->
+
             <?php  }  ?>
 
 
@@ -177,23 +184,23 @@ body{
 
 <script>
 
-    $(document).ready(function(){
-        $("#quick-search").keyup(function(){
-            var quickSearch = $("#quick-search").val();
-            // alert(quickSearch);
-            $.ajax({
-                url:'qSearch.php',
-                data:{place_title:quickSearch},
-                type:'POST',
-                success:function(data){
-                    if (!data.error) {
-                            $('#result').html(data);
-                        }
-                }
+    // $(document).ready(function(){
+    //     $("#quick-search").keyup(function(){
+    //         var quickSearch = $("#quick-search").val();
+    //         // alert(quickSearch);
+    //         $.ajax({
+    //             url:'qSearch.php',
+    //             data:{place_title:quickSearch},
+    //             type:'POST',
+    //             success:function(data){
+    //                 if (!data.error) {
+    //                         $('#result').html(data);
+    //                     }
+    //             }
 
-            });
-        });
-    });
+    //         });
+    //     });
+    // });
 
 
 </script>

@@ -119,7 +119,7 @@
                             <textarea id="comment_content" class="form-control" rows="7"
                                 placeholder="Enter your comments....."></textarea>
                         </div>
-                        <input type="button" class="btn btn-primary" id="submit" value="submit">
+                        <input type="button" class="btn btn-primary" id="comment-submit" value="submit">
                     </form>
                     <p id="posted" class="bg-success p-2"></p>
                     <p id="posted_fail" class="bg-danger p-2"></p>
@@ -146,7 +146,7 @@
     $(document).ready(function () {
         dispalyComment();
         //insert comment to the databse
-        $('#submit').click(function () {
+        $('#comment-submit').click(function () {
             var comment_content = $('#comment_content').val();
             var commented_user_id = $('#commented_user_id').val();
             var comment_place_id = $('#comment_place_id').val();

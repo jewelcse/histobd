@@ -54,11 +54,11 @@ while ($row = mysqli_fetch_assoc($select_all_comments) )
         </div><!-- /panel panel-default -->
 
 
-        <button type="submit" class="btn btn-primary" id="reply-button">Reply</button>
+        <!-- <button type="submit" class="btn btn-primary" id="reply-button">Reply</button>
 
         <form action="" method="post" id="reply-form">
             <textarea name="" id="" cols="5" rows="5" class="form-control"></textarea>
-        </form>
+        </form> -->
 
     </div><!-- /col-sm-5 -->
 </div>
@@ -70,12 +70,12 @@ while ($row = mysqli_fetch_assoc($select_all_comments) )
 
 
 <script>
-    $(document).ready(function () {
+    // $(document).ready(function () {
 
-        $("#reply-button").click(function () {
-            $('#reply-form').hide();
-        });
+    //     $("#reply-button").click(function () {
+    //         $('#reply-form').hide();
+    //     });
    
-    }
+    // }
 
 </script>

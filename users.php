@@ -269,11 +269,11 @@
     // function displayUserProfile(){
 
     //   $.ajax({
-    //     url:"users_profile.php",
+    //     url:"viewUserProfilephp",
     //     type:"post",
     //     cache:false,
     //     data:{
-    //       userId:id
+    //       userId:1
     //     },
     //     success:function(data){
           
