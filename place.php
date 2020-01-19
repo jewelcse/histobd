@@ -1,17 +1,23 @@
 <!-- header -->
 
-<?php include  "templates/header.php" ?>
+<?php include "templates/header.php" ?>
 
 <!-- navigation bar -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<?php include  "templates/navigation.php" ?>
+<?php include "templates/navigation.php" ?>
 <style type="text/css">
     /* .row {
         margin-top: 30px;
     } */
+    #comment_content{
+        height:35px;
+    }
 
+    .comment {
+    margin-bottom: 30px;
+}
     .reply-form {
         display: none;
     }
@@ -37,34 +43,33 @@
     <div class="row">
         <?php 
 
-                    if (isset($_GET['place_id'])) {
+        if (isset($_GET['place_id'])) {
 
-                    $place_title_url =  $_GET['place_id'];
+            $place_title_url = $_GET['place_id'];
 
 
-                    
-                    $query = "SELECT * FROM places WHERE place_id= '{$place_title_url}' ";
 
-                    $select_all_places = mysqli_query($connection,$query);
+            $query = "SELECT * FROM places WHERE place_id= '{$place_title_url}' ";
 
-                    while ($row = mysqli_fetch_assoc($select_all_places) )
-                    {
-                    $the_place_id =$row['place_id']; 
-                    $place_title = $row['place_title'];
-                    $place_address = $row['place_address'];
-                    $added_date = $row['added_date'];
-                    $place_image = $row['place_image'];
-                    $place_description = $row['place_description'];
-                    $place_location = $row['place_location'];
+            $select_all_places = mysqli_query($connection, $query);
 
-                    ?>
+            while ($row = mysqli_fetch_assoc($select_all_places)) {
+                $the_place_id = $row['place_id'];
+                $place_title = $row['place_title'];
+                $place_address = $row['place_address'];
+                $added_date = $row['added_date'];
+                $place_image = $row['place_image'];
+                $place_description = $row['place_description'];
+                $place_location = $row['place_location'];
+
+                ?>
 
         <!--show all places by their uniqe place_id-->
         <div class="col-md-offset-1 col-md-10">
             <h2 class="place-title">
-                <?php  echo $place_title ?>
+                <?php echo $place_title ?>
             </h2>
-            <p id="place-address"><i class="fa fa-map-marker"> <?php  echo $place_address ?></i></p>
+            <p id="place-address"><i class="fa fa-map-marker"> <?php echo $place_address ?></i></p>
 
 
             <img style="width: 100%" class="place-photo img-responsive pull-right img-thumbnail"
@@ -94,7 +99,9 @@
                     <p>Location-Map : </p>
 
 
-                    <?php echo $place_location;  } } ?>
+                    <?php echo $place_location;
+                }
+            } ?>
                 </blockquote>
 
 
@@ -105,16 +112,16 @@
 
 
                 <!-- Comments Form -->
-
+            <div class="comment">
                 <div class="mb-5">
                     <h4>Leave a Comment:</h4>
                     <form action="" method="post">
                         <div class="form-group">
                             <input type="hidden" id="commented_user_id" value="<?php 
-                            if(isset($_SESSION['user_id'])){
-                                echo $_SESSION['user_id'];
-                            }
-                             ?>">
+                                                                                if (isset($_SESSION['user_id'])) {
+                                                                                    echo $_SESSION['user_id'];
+                                                                                }
+                                                                                ?>">
                             <input type="hidden" id="comment_place_id" value="<?php echo $the_place_id; ?>">
                             <textarea id="comment_content" class="form-control" rows="7"
                                 placeholder="Enter your comments....."></textarea>
@@ -131,7 +138,7 @@
 
                 <!-- comment reply -->
                 <div id="commentData"></div>
-
+                </div>                                                                 
                 <!-- comment reply end -->
 
             </div>

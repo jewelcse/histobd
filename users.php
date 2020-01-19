@@ -107,8 +107,8 @@
       <div class="profile">
         <div class="user_profile">
           <div class="profile_picture">
-            <img src="images/<?php echo $user_image ;?>" style="height: 230px; width: auto; margin-top: 50px;"
-              class="img-thumbnail img-responsive" alt="user_photo">
+            <!-- <img src="images/<?php //echo $user_image ;?>" style="height: 230px; width: auto; margin-top: 50px;"
+              class="img-thumbnail img-responsive" alt="user_photo"> -->
           </div>
           <!--/.profile_picture-->
           <div class="user_info">
