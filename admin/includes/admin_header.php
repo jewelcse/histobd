@@ -2,7 +2,7 @@
 <?php include "../templates/db.php" ?>
 <?php //ob_start(); ?>
 
-
+<?php require_once("session.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 

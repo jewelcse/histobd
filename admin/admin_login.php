@@ -1,6 +1,6 @@
 
 <?php include("../templates/db.php") ;?>
-<?php session_start(); ?>
+<?php require_once("includes/session.php") ?>
 
 
 <title>Admin-histobd</title>
@@ -100,6 +100,7 @@ else{
 	else if ($db_admin_name == $admin_name && $db_admin_password == $admin_password) {
 
 		$_SESSION['admin_id'] = true;
+		$_SESSION['current_status'] = 1;
 		$_SESSION['admin_name'] = $db_admin_name;
 		
 		header("Location:index.php");

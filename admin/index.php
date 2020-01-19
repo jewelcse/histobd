@@ -1,4 +1,6 @@
 
+
+
 <!--Header section -->
 
 <?php include("includes/admin_header.php") ;?>
@@ -245,4 +247,5 @@ echo "['$set_element[$i]'".","."$total_number[$i]],";
 
     </div>
     <!-- /#wrapper -->
-<?php include("includes/admin_footer.php");
+<?php include("includes/admin_footer.php");?>
+

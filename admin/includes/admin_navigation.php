@@ -1,6 +1,6 @@
+<?php include("admin_header.php") ;?>
 
-<?php session_start();?>
-
+<?php require_once("session.php") ?>
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">

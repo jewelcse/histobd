@@ -31,7 +31,7 @@
                         </h1>
 
 <?php 
-
+$source="";
 if (isset($_GET['source'])) {
 
 $source = $_GET['source'];
